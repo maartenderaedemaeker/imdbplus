@@ -12,6 +12,7 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     const handleRouteChange = (url) => {
+      if(window.location.search.indexOf('_storyblok') >= -1) return;
       ga.pageview(url)
     }
     hotjar.initialize(2688484, 6)
